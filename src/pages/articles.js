@@ -10,7 +10,7 @@ const Articles = ({ data, location }) => {
     <div>
       <Layout location={location} title={siteTitle}>
       <div>
-        <div className="text-3xl font-bold font-serif">Articles</div>
+        <div className="text-3xl font-bold font-sans">Articles</div>
     </div>
     <div>
       {/* <Bio /> */}

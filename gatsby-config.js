@@ -94,13 +94,14 @@ module.exports = {
                     frontmatter {
                       title
                       date
+                      tag
                     }
                   }
                 }
               }
             `,
             output: "/rss.xml",
-            title: "Gatsby Starter Blog RSS Feed",
+            title: "Tariq Massaoudi",
           },
         ],
       },
@@ -108,7 +109,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
+        name: `Tariq Massaoudi`,
         short_name: `GatsbyJS`,
         start_url: `/`,
         background_color: `#ffffff`,

@@ -8,13 +8,13 @@ const Layout = ({ location, title, children }) => {
   let header
 
   if (isRootPath) {
-    header = (<div className="text-center my-8">
-      <div className="uppercase text-xl font-sans font-bold text-black my-5">
+    header = (<div className="text-center mt-8" >
+      <div className="uppercase text-xl font-sans font-bold  my-5">
        Hi there 👋, I’m 
     </div>
      <div className="text-7xl font-serif font-bold text-black my-5">Tariq Massaoudi
       </div>
-      <div className="text-xl font-sans text-black">Software Engineer from Morocco.<br/>
+      <div className="text-xl font-sans "><span className="font-medium">Software Engineer</span> from Morocco.<br/>
       I do techy experiments and write about them.<br/>
       I’m currently working at SAS Institute.
       </div> 
@@ -31,7 +31,7 @@ const Layout = ({ location, title, children }) => {
 
   return (<div>
     <Header></Header>
-    <div className="global-wrapper" data-is-root-path={isRootPath}>
+    <div className="global-wrapper " data-is-root-path={isRootPath}>
     
       <header className="global-header">{header}</header>
       <main>{children}</main>
