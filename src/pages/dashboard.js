@@ -1,16 +1,16 @@
 import * as React from "react"
 import Layout from "../components/layout"
 import { graphql } from "gatsby"
-import {VectorMap } from "@react-jvectormap/core"
-import Morocco from "../map/morocco.json";
+// import {VectorMap } from "@react-jvectormap/core"
+// import Morocco from "../map/morocco.json";
 
 const Dashboard = ({ data, location }) => {
-    const siteTitle = data.site.siteMetadata?.title || `Title`
-    const posts = data.allMarkdownRemark.nodes
+    // const siteTitle = data.site.siteMetadata?.title || `Title`
+    // const posts = data.allMarkdownRemark.nodes
     return (
       <div>
      
-        <Layout location={location} title={siteTitle}>
+        {/* <Layout location={location} title={siteTitle}>
         <div>
           <div className="text-3xl font-bold font-sans">Dashboard</div>
           <VectorMap map={Morocco} style={{"width": "100%","height": 500,"background-color": "rgb(255, 255, 255)"}} regionStyle={{
@@ -38,7 +38,7 @@ const Dashboard = ({ data, location }) => {
       
 
 
-      </Layout>
+      </Layout> */}
   
   
   
