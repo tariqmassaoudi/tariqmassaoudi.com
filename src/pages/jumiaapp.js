@@ -5,6 +5,7 @@ import Layout from "../components/layout"
 import ProductCard from "../components/productCard"
 import KpiSection from "../components/kpiSection"
 import DropDown from "../components/dropdown"
+import SearchBar from "../components/searchbar"
 const url_products='https://dqfizqyds0.execute-api.eu-west-3.amazonaws.com/default/getTopProducts'
 
 
@@ -47,8 +48,11 @@ fetchProducts(url_products)
         <div>
 
           <Layout location={location} title={siteTitle}>
-         <DropDown/>
+        
       <KpiSection/>
+      <SearchBar/>
+      <DropDown/>
+      {category} found {Object.keys(products).length} deals
  {
           Object.keys(products).map((key,i)=>{
             return (<div>

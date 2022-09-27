@@ -32,6 +32,26 @@ ChartJS.register(
   annotationPlugin
 );
 
+
+const url_history='https://dqfizqyds0.execute-api.eu-west-3.amazonaws.com/default/getPriceHistory'
+const url_product='https://dqfizqyds0.execute-api.eu-west-3.amazonaws.com/default/getProductDetails'
+// const prod_id='GA204HB0U09TGNAFAMZ'
+
+const Pricehistory = ({ data, location }) => {
+  const params = new URLSearchParams(location.search);
+  const prod_id = params.get("id") ;
+  const href = params.get("href") ;
+  let request_body={}
+  if (prod_id){
+    request_body={"prod_id":prod_id}
+  }else{
+    request_body={"href":href}
+  }
+
+  const [name,setName]=useState('')
+  const [image,setImage]=useState(null)
+  const [averagePrice,setAveragePrice]=useState(0)
+  
 const options = {
   responsive: true,
   plugins: {
@@ -47,28 +67,17 @@ const options = {
       annotations: {
         line1: {
           type: 'line',
-          yMin: 200,
-          yMax: 200,
+          yMin: averagePrice,
+          yMax: averagePrice,
           borderColor: 'rgb(0, 255, 0)',
           borderWidth: 2,
           borderDash:[5],
-          label:{content:"average price", display: true, yAdjust:-20}
+          label:{content:"average price", display: true, yAdjust:20}
         }
       }
     }
   },
 };
-
-const url_history='https://dqfizqyds0.execute-api.eu-west-3.amazonaws.com/default/getPriceHistory'
-const url_product='https://dqfizqyds0.execute-api.eu-west-3.amazonaws.com/default/getProductDetails'
-// const prod_id='GA204HB0U09TGNAFAMZ'
-
-const Pricehistory = ({ data, location }) => {
-  const params = new URLSearchParams(location.search);
-  const prod_id = params.get("id");
-
-  const [name,setName]=useState('')
-  const [image,setImage]=useState(null)
 
     const [history, setHistory] = useState({
       label:[],
@@ -92,11 +101,13 @@ const Pricehistory = ({ data, location }) => {
                 'Content-Type': 'application/json'
               },
               method: "POST",
-              body: JSON.stringify({"prod_id": prod_id})
+              body: JSON.stringify(request_body)
           });
     // convert the data to json
     const resultData = await res.json();
+    const averagePrice=Object.values(resultData).reduce((a, b) => a + b, 0) / Object.values(resultData).length
     const data={}
+
     for (var key of Object.keys(resultData)) {
             data[new Date(key).toDateString().split(" ").slice(1,3).join(" ")]=resultData[key]
         }
@@ -116,7 +127,9 @@ const Pricehistory = ({ data, location }) => {
             
           }
           
-    setHistory(chartData);
+    setHistory(chartData)
+    setAveragePrice(averagePrice)
+    
 
 
   }
@@ -129,7 +142,7 @@ const Pricehistory = ({ data, location }) => {
                       'Content-Type': 'application/json'
                     },
                     method: "POST",
-                    body: JSON.stringify({"prod_id": prod_id})
+                    body: JSON.stringify(request_body)
                 });
           // convert the data to json
           const resultData = await res.json();
