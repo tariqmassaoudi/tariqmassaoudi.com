@@ -2,7 +2,6 @@
 import React, { Fragment} from 'react'
 import { Menu, Transition } from '@headlessui/react'
 import { ChevronDownIcon } from '@heroicons/react/solid'
-import { Link,navigate} from "gatsby"
 
 
 
@@ -26,16 +25,17 @@ const categories=["Electronics",
 "Gaming",
 "Automobile",
 "Home  Office"]
-export default function DropDown() {
-    function handleClick(href){
-navigate(href)
+export default function DropDown({category,getCategory}) {
+    function handleClick(category){
+getCategory(category)
 
     }
+    console.log("hello"+category)
   return (
     <Menu as="div" className="relative inline-block text-left">
       <div>
-        <Menu.Button className="inline-flex w-full justify-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-100">
-          Change Category
+        <Menu.Button className="inline-flex w-full font-sans justify-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 ">
+          {category}
           <ChevronDownIcon className="-mr-1 ml-2 h-5 w-5" aria-hidden="true" />
         </Menu.Button>
       </div>
@@ -49,7 +49,7 @@ navigate(href)
         leaveFrom="transform opacity-100 scale-100"
         leaveTo="transform opacity-0 scale-95"
       >
-        <Menu.Items className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+        <Menu.Items className="absolute right-0 z-10 mt-2 lg:w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
           <div className="py-1">
 
             {
@@ -60,15 +60,26 @@ navigate(href)
                             //     active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
                             //     'block px-4 py-2 text-sm'
                             //   )} to={"/jumiaapp?category="+category}>{category}</Link>
-                          <a
-                            href={"/jumiaapp?category="+category}
-                            className={classNames(
-                              active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                              'block px-4 py-2 text-sm'
-                            )}
-                          >
-                            {category}
-                          </a>
+                          // <a
+                          //   // href={"/jumiaapp?category="+category}
+                          //   href="#"
+                          //   className={classNames(
+                          //     active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                          //     'block px-4 py-2 text-sm'
+                          //   )}
+                          // >
+                          //   {category}
+                          // </a>
+                             <button
+                             // href={"/jumiaapp?category="+category}
+                             onClick={()=>handleClick(category)}
+                             className={classNames(
+                               active ? 'bg-gray-100 font-sans text-gray-900 w-full' : 'text-gray-700',
+                               'block px-4 py-2 font-sans text-sm w-full'
+                             )}
+                           >
+                             {category}
+                           </button>
                         )}
                       </Menu.Item>)
                 })

@@ -28,6 +28,7 @@
     "gatsby-transformer-remark": "^5.21.0",
     "gatsby-transformer-sharp": "^4.21.0",
     "heroicons": "^2.0.11",
+    "javascript-time-ago": "^2.5.7",
     "jquery": "^3.6.1",
     "prismjs": "^1.28.0",
     "react": "^18.1.0",

@@ -5,6 +5,7 @@ import Header from "./header"
 const Layout = ({ location, title, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`
   const isRootPath = location.pathname === rootPath
+  console.log(location.pathname)
   let header
 
   if (isRootPath) {
@@ -31,12 +32,13 @@ const Layout = ({ location, title, children }) => {
 
   return (<div>
     <Header></Header>
-    <div className="global-wrapper " data-is-root-path={isRootPath}>
+    <div className={location.pathname!=='/pricehistory'? "global-wrapper":""} data-is-root-path={isRootPath}>
     
-      <header className="global-header">{header}</header>
+      <header className={location.pathname!=='/pricehistory'? "global-header":""}>{header}</header>
       <main>{children}</main>
-      <footer>
-        © {new Date().getFullYear()}, Designed and Developed by Tariq
+      <footer className="font-sans">
+        {/* © {new Date().getFullYear()},  */}
+        Made with 🍵 by Tariq
       </footer>
     </div>
   </div>
