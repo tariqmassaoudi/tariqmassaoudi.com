@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* ul li::before {
+    content: "•";
+    color: black;
+    font-weight: bold;
+    display: inline-block; 
+    width: 1em;
+    margin-left: -1em;
+    font-size: 1.5em;
+  } */
+
+  ul {
+    @apply list-inside list-disc;
+  }

@@ -12,7 +12,7 @@ const BlogIndex = ({ data, location }) => {
       <Layout location={location} title={siteTitle}>
       {/* <Bio /> */}
       <div className="text-2xl font-semibold font-sans text-black mb-2">Featured Articles: </div>
-      <ol className="flex flex-row" style={{ listStyle: `none` }}>
+      <ol className="flex flex-col md:flex-row" style={{ listStyle: `none` }}>
         {posts.map((post,index) => {
           const title = post.frontmatter.title || post.fields.slug
 
@@ -50,7 +50,10 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMarkdownRemark(
+      sort: {fields: [frontmatter___date], order: DESC}
+      filter: {frontmatter: {title: {in: ["Every Data Scientist Needs To Learn This","Arabic Topic Classification On The Hespress News Dataset","What you should know about ensemble learning"]}}}
+    ) {
       nodes {
         excerpt
         fields {
@@ -58,9 +61,9 @@ export const pageQuery = graphql`
         }
         frontmatter {
           date(formatString: "MMMM DD, YYYY")
+          tag
           title
           description
-          tag
         }
       }
     }

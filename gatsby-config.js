@@ -39,6 +39,14 @@ module.exports = {
             },
           },
           {
+            resolve: `gatsby-remark-classes`,
+            options: {
+              classMap: {
+                "list": "list-disc"
+              }
+            }
+          },
+          {
             resolve: `gatsby-remark-responsive-iframe`,
             options: {
               wrapperStyle: `margin-bottom: 1.0725rem`,

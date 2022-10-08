@@ -27,13 +27,15 @@ const fetchProducts = async (url) => {
   // get the data from the api
   const res = await fetch(url,{
             headers: {
-              'Content-Type': 'application/json'
+              'Content-Type': 'application/json',
+              'Accept': 'application/json'
             },
             method: "POST",
             body: JSON.stringify({"category": category})
         });
   // convert the data to json
   const resultData = await res.json();
+
    setProducts(resultData)
    setLoading(false)
 
@@ -43,6 +45,7 @@ const fetchProducts = async (url) => {
 
 
 fetchProducts(url_products)
+
 
 
 }, [category])
