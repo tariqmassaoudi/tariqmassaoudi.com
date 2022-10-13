@@ -1,7 +1,7 @@
 ---
 title: Arabic Topic Classification On The Hespress News Dataset
 date: "2020-10-18T23:46:37.121Z"
-tag: test
+tag: NLP
 description: Using NPL techniques to classify arabic news
 
 

@@ -18,7 +18,7 @@ const BlogPostCard = ({title,description,tagName,link,style}) => {
                       {description}
                     </p>
                   </div>
-                  {/* <Tag tagName={tagName}/> */}
+                  <Tag tagName={tagName}/>
                 </div>
               </div>
             </Link>

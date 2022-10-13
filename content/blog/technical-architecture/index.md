@@ -1,6 +1,6 @@
 ---
-title: "What you should know about ensemble learning"
-date: "2020-09-27T22:40:32.169Z"
+title: "How I Built A Price Comparator For Jumia"
+date: "2022-10-11T22:40:32.169Z"
 description: The wisdom of the crowds for machines
 tag: Machine Learning
 ---

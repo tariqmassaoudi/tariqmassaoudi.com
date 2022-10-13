@@ -2,7 +2,7 @@
 title: Every Data Scientist Needs To Learn This
 date: "2020-10-25T22:40:32.169Z"
 description: This single skill will open a world of new possibilities for you
-tag: datascience
+tag: Scraping
 ---
 
 ![](https://miro.medium.com/max/1400/0*4Zw7_m7VVmtjAAhT)Photo by [Rock'n Roll Monkey](https://unsplash.com/@rocknrollmonkey?utm_source=medium&utm_medium=referral) on [Unsplash](https://unsplash.com?utm_source=medium&utm_medium=referral)

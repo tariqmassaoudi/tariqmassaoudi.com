@@ -33,10 +33,10 @@ const Layout = ({ location, title, children }) => {
 
   return (<div>
     
-    <Header></Header>
-    <div className={location.pathname!=='/pricehistory'? "global-wrapper":""} data-is-root-path={isRootPath}>
     
-      <header className={location.pathname!=='/pricehistory'? "global-header":""}>{header}</header>
+    <div className="global-wrapper" data-is-root-path={isRootPath}>
+    <Header></Header>
+      <header >{header}</header>
       <main>{children}</main>
       <footer className="font-sans">
         {/* © {new Date().getFullYear()},  */}
