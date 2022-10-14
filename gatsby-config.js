@@ -2,11 +2,11 @@ module.exports = {
   siteMetadata: {
     title: `Tariq Massaoudi`,
     author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      name: `Tariq Massaoudi`,
+      summary: `Software Enginner building useful things`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
+    description: `Tariq Massaoudi's Personal Website`,
+    siteUrl: `https://www.tariqmassaoudi.com`,
     social: {
       twitter: `kylemathews`,
     },
@@ -63,7 +63,7 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 630,
+              maxWidth: 1000,
             },
           },
           {

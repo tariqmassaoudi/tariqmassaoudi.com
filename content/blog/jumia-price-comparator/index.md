@@ -1,8 +1,8 @@
 ---
-title: "How I Built A Price Comparator For Jumia"
+title: "How I Built A Price Tracker For Jumia"
 date: "2022-10-11T22:40:32.169Z"
-description: The wisdom of the crowds for machines
-tag: Machine Learning
+description: An overview on how to build a price tracker and host it for free on AWS
+tag: Data Engineering
 ---
 
 
@@ -22,7 +22,7 @@ Jumia has several branches all over Africa, we will be focusing on the Moroccan 
 
 ### Technical Architecture:
 
-![](https://cdn-images-1.medium.com/max/1000/1*VtcIUvEn6chKqJHd9BtgQw.png)
+![](./pictures/architecture.png)
 
 The picture above summarizes the architecture, I chose to spread out and make use of a variety of AWS components which is more optimal for efficiency.
 
@@ -34,7 +34,7 @@ The architecture split into two main sections:
 
 ### Data Model:
 
-![](https://cdn-images-1.medium.com/max/1000/1*t67Cx7OEIsy9SgqYSvC3Cg.png)
+![](./pictures/datamodel.png)
 
 The main table called “Prices” holds historical price data, we are also maintaning details about the products tracked in the “products” table and analytics/ recommendations related data “prod_ranking” and “KPI” tables.
 
@@ -50,11 +50,11 @@ The product is down 27.62% from it’s average price. To further enhance recomme
 
 The first step is to get urls of the categories, the picture below shows from where they are extracted.
 
-![](https://cdn-images-1.medium.com/max/1000/1*M0KlaRYLARQl6HqEuHu5vw.png)
+![](./pictures/scraping1)
 
 Now each category has multiple pages, we use the page number as a variable to navigate and grab products in each page.
 
-![](https://cdn-images-1.medium.com/max/1000/1*Sy03U75J5KqH9kQYF3AuBg.png)
+![](./pictures/scraping0)
 
 Below is the full scraping code, it utilizes python’s request module, beautifulsoup to parse html and and tqdm for multithreading which accelerates the task. To learn more about scraping I’d recommend my [article](https://medium.com/analytics-vidhya/every-data-scientist-needs-to-learn-this-4632e3a2e275) or similar content.
 
