@@ -12,7 +12,7 @@ const About = ({ data, location }) => {
     <div>
       <Layout location={location} title={siteTitle}>
       <div>
-        <div className="text-5xl font-sans font-bold  mb-8 mt-6">About</div>
+        <div className="text-3xl font-sans font-bold  mb-8 mt-6">About🧑</div>
         <div class="flex flex-col md:flex-row items-center">
        
         {/* My Name is Tariq <br/> */}
@@ -28,7 +28,7 @@ const About = ({ data, location }) => {
 </div>
 <div>
 <div className="text-2xl font-serif font-bold text-black mt-16 mb-8 ">Content I recommend that you might enjoy</div>
-<div className="text-xl font-sans mb-2">Podcasts🎙️<br/>
+<div className="text-xl font-sans font-medium text-black mb-2">Podcasts🎙️<br/>
 </div>
 <ul className="font-sans">
     <li>
@@ -42,7 +42,7 @@ const About = ({ data, location }) => {
     </li>
   </ul>
 
-  <div className="text-xl font-sans mb-2">Video Games🎮<br/>
+  <div className="text-xl font-sans font-medium text-black mb-2">Video Games🎮<br/>
 </div>
 <ul className="font-sans">
     <li>
@@ -56,7 +56,7 @@ const About = ({ data, location }) => {
     </li>
   </ul>
 
-  <div className="text-xl font-sans mb-2">Books📖<br/>
+  <div className="text-xl font-sans font-medium text-black mb-2">Books📖<br/>
 </div>
 <ul className="font-sans">
     <li>
@@ -70,7 +70,7 @@ const About = ({ data, location }) => {
     </li>
   </ul>
 
-  <div className="text-xl font-sans mb-2">Anime⛩️<br/>
+  <div className="text-xl font-sans font-medium text-black mb-2">Anime⛩️<br/>
 </div>
 <ul className="font-sans">
     <li>
