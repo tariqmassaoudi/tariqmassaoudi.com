@@ -14,7 +14,7 @@ const Layout = ({ location, title, children }) => {
       <div className="uppercase text-xl font-sans font-bold  my-5">
        Hi there 👋, I’m 
     </div>
-     <div className="text-7xl font-serif font-bold text-black my-5">Tariq Massaoudi
+     <div className="text-5xl md:text-7xl font-serif font-bold text-black my-5">Tariq Massaoudi
       </div>
       <div className="text-xl font-sans "><span className="font-medium">Software Engineer</span> from Morocco.<br/>
       I do techy experiments and write about them.<br/>
