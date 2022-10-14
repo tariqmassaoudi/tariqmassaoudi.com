@@ -16,7 +16,7 @@ const url_products='https://dqfizqyds0.execute-api.eu-west-3.amazonaws.com/defau
 const JumiaApp=({data,location})=>{
 const siteTitle = data.site.siteMetadata?.title || `Title`
 const [products,setProducts]=useState({})
-const [category,setcategory]=useState("Computing")
+const [category,setcategory]=useState("Sporting Goods")
 const [loading,setLoading]=useState(true)
 const getCategory = (category) => {
   setcategory(category)

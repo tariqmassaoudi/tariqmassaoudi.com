@@ -6,7 +6,7 @@ tag: Data Engineering
 ---
 
 
-In this article, I’ll share with you how and my thought process on building a Price Tracker app for the African Ecommerce website Jumia and hosting it on AWS for free. This is a quite simple end to end data engineering project with some UX elements. You’ll learn about web scraping, and how to use some of AWS services.
+In this article, I’ll share with you how and my thought process on building a Price Tracker app for the African Ecommerce website Jumia and hosting it on AWS for free. This is a quite simple end to end data engineering project with some UX elements. You’ll learn about web scraping, and how to use some of AWS services. You can try the app using this [link](https://www.tariqmassaoudi.com/jumiaapp/)
 
 ### **The Context & The Plan:**
 
@@ -72,7 +72,7 @@ One of the main advantages of using airflow is the graphical interface, you can 
 
 It will also store the execution times and logs which is extremely useful for debugging, below is the DAG used in the project and the main python code used to generate such DAG. To learn more about airflow the [official documentation](https://airflow.apache.org/docs/) is the best place
 
-![](https://cdn-images-1.medium.com/max/1000/1*_MsyxvsTL7uGiZOiTifHuA.png)
+![](./pictures/airflow.png)
 `gist:tariqmassaoudi/eb5d1310e21b9a0d1501067fe702f4d3#jumiaDag.py`
 
 ### AWS Lambda a serverless backend:
@@ -81,17 +81,17 @@ It will also store the execution times and logs which is extremely useful for de
 
 Lambda functions are pretty flexible, in this project it was used as a REST API to lift off the workload from the main EC2 server. It’s easy to get started with, you just choose your prefered language and start a function from scratch or use a container or one of the provided AWS blueprints.
 
-![](https://cdn-images-1.medium.com/max/1000/1*pN86h92M6RsRgLbm-EBX8g.png)
+![](./pictures/lambdacreate.png)
 
 Once your function is created you have to set it up for your use case this includes, in my experience setting up “layers” which is basically a way for your function to use external libraries in my case I needed pandas and sqlalchemy, then you have to setup the REST API to be able to call the function from the web, the default settings are fine but you have to enable cors (Cross-Origin Resource Sharing) to be able to call the function from your browser, the [documentation](https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-cors.html) does a good job explaining this.
 
 After the setup you will have a function with layers and an API gateway:
 
-![](https://cdn-images-1.medium.com/max/1000/1*V5ILce029TYF9fthL27LVQ.png)
+![](./pictures/lambdaoverview.png)
 
 To let the function communicate with your RDS database you will need to connect it to a VPC in the same subnets as your RDS setup and also create a “security group” allowing connection on the postgres port 5432 and assign it to the function:
 
-![](https://cdn-images-1.medium.com/max/1000/1*2M99wmtcrUY2BZtp6LnsdA.png)
+![](./pictures/lambdavpc.png)
 
 Below is an example of a function that gets product details given a product id or a product url:
 `gist:tariqmassaoudi/0c5c7a75923a9124f329ea49c46c2b46#getProduct.py`
