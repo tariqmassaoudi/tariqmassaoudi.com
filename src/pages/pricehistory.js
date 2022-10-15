@@ -56,7 +56,7 @@ const Pricehistory = ({ data, location }) => {
 
   const [minPrice,setminPrice]=useState(0)
   const [maxPrice,setmaxPrice]=useState(0)
-  const [lastPriceChange,setlastPriceChange]=useState(0)
+  const [lastPriceChange,setlastPriceChange]=useState("Never")
   const [product,setProduct]=useState({'img_url':null,'name':null,'price':null,'stars':'','reviewcount':null,href:'',brand:null,fastDelivery:null,etranger:null})
   const [averagePrice,setAveragePrice]=useState(0)
   const [latestPrice,setlatestPrice]=useState(0)
@@ -118,6 +118,8 @@ const options = {
           });
     // convert the data to json
     const resultData = await res.json();
+
+  
     const valuesArr=Object.values(resultData)
     const averagePrice=valuesArr.reduce((a, b) => a + b, 0) / Object.values(resultData).length
     const minPrice=Math.min(...valuesArr)
@@ -166,8 +168,8 @@ for (const key of reversedKeys){
     setmaxPrice(maxPrice)
     setlatestPrice(Object.values(resultData).at(-1))
     const timeAgo = new TimeAgo('en-US')
-    setlastPriceChange(timeAgo.format(date))
     setloadingPriceHistory(false)
+    setlastPriceChange(timeAgo.format(date) || 'Never')
 
 
   }
