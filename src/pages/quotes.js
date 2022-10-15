@@ -13,7 +13,7 @@ const Quotes = ({ data, location }) => {
     <div>
       <Layout location={location} title={siteTitle}>
       <div>
-        <div className="text-3xl font-bold font-sans mt-8 mb-24">My Fav Quotes Might Inspire You 🖋</div>
+        <div className="text-3xl font-bold font-sans mt-8 mb-24">Couple of Favorite Quotes that Might Inspire You 💡</div>
      
         <Quote author="Antoine de Saint-Exupery" body="Perfection is Achieved Not When There Is Nothing More to Add, But When There Is Nothing Left to Take Away" image="https://www.linflux.com/wp-content/uploads/2017/09/St-EX.jpg"/>
         <Quote author="Braum - League of Legends" body="The darker the night, the brighter the stars" image="https://i.pinimg.com/564x/c0/da/d2/c0dad2264f86c83a5265524f88192d47.jpg"/>

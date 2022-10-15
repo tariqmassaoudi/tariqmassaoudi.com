@@ -40,7 +40,7 @@ const Layout = ({ location, title, children }) => {
       <main>{children}</main>
       <footer className="font-sans">
         {/* © {new Date().getFullYear()},  */}
-        Made with 🍵 by Tariq
+        {/* Made with 🍵 by Tariq */}
       </footer>
     </div>
   </div>

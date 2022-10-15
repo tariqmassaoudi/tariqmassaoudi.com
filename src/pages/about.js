@@ -12,7 +12,7 @@ const About = ({ data, location }) => {
     <div>
       <Layout location={location} title={siteTitle}>
       <div>
-        <div className="text-3xl font-sans font-bold  mb-8 mt-6">About🧑</div>
+        <div className="text-3xl font-sans font-bold  mb-8 mt-6">About</div>
         <div class="flex flex-col md:flex-row items-center">
        
         {/* My Name is Tariq <br/> */}
@@ -20,14 +20,14 @@ const About = ({ data, location }) => {
   <div className="text-xl font-sans">
   I'm Tariq, I graduated from UM6P Morocco and currently working as a technical consultant at SAS.<br/>
   I’m passionate about building tech projects that bring impact.<br/>
-  I consider myself a forever student, when you stop learning you start dying, I'm always curious to expand my knowledge in and outside of tech, amongst favorite topics are Graphical Design, Cyber Security and Pychology.<br/>
+  I consider myself a forever student, always curious to expand my knowledge in and outside of tech, amongst favorite topics are Graphical Design, Cyber Security and Pychology.<br/>
   I regulary share educational content in the form of articles about my latest experiments.<br/>
   If I’m not coding or working out, I like to spend my time playing videogames, watching anime and learning about different topics, I enjoy reading books and listening to podcasts.<br/>
 
 </div>
 </div>
 <div>
-<div className="text-2xl font-serif font-bold text-black mt-16 mb-8 ">Content I recommend that you might enjoy</div>
+<div className="text-2xl font-sans font-bold text-black mt-16 mb-8 ">Content I recommend that you might enjoy: </div>
 <div className="text-xl font-sans font-medium text-black mb-2">Podcasts🎙️<br/>
 </div>
 <ul className="font-sans">
