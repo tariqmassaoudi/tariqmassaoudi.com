@@ -1,5 +1,5 @@
 ---
-title: "What you should know about ensemble learning"
+title: "What You Should Know About Ensemble Learning"
 date: "2020-09-27T22:40:32.169Z"
 description: The wisdom of the crowds for machines
 tag: Machine Learning
