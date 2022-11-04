@@ -52,7 +52,7 @@ export const pageQuery = graphql`
     }
     allMarkdownRemark(
       sort: {fields: [frontmatter___date], order: DESC}
-      filter: {frontmatter: {title: {in: ["What you should know about ensemble learning","Every Data Scientist Needs To Learn This","Arabic Topic Classification On The Hespress News Dataset"]}}}
+      filter: {frontmatter: {title: {in: ["What You Should Know About Ensemble Learning","Every Data Scientist Needs To Learn This","Arabic Topic Classification On The Hespress News Dataset"]}}}
     ) {
       nodes {
         excerpt
