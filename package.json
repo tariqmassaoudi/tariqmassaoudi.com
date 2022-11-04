@@ -29,10 +29,12 @@
     "heroicons": "^2.0.11",
     "javascript-time-ago": "^2.5.7",
     "jquery": "^3.6.1",
+    "plotly.js": "^2.16.1",
     "prismjs": "^1.28.0",
     "react": "^18.1.0",
     "react-chartjs-2": "^4.3.1",
     "react-dom": "^18.1.0",
+    "react-plotly.js": "^2.6.0",
     "typeface-merriweather": "0.0.72",
     "typeface-montserrat": "0.0.75"
   },
