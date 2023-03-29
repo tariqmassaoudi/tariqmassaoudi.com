@@ -24,6 +24,9 @@ setHidden(!hidden)
           <Link to='/articles' className="block text-base py-2 pr-4 pl-3 text-gray-500 hover:text-gray-900   md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Articles</Link>
         </li>
         <li>
+          <Link to='/side' className="block text-base py-2 pr-4 pl-3 text-gray-500 hover:text-gray-900   md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Side Projects</Link>
+        </li>
+        <li>
           <Link to="/quotes" className="block text-base py-2 pr-4 pl-3 text-gray-500 hover:text-gray-900  md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Quotes</Link>
         </li>
         <li>

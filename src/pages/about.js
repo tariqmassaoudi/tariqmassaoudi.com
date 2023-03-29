@@ -18,11 +18,11 @@ const About = ({ data, location }) => {
         {/* My Name is Tariq <br/> */}
   <img class="object-fill w-48 h-48 rounded-full shadow-xl md:mr-8 mb-4" src={tariq}/>
   <div className="text-xl font-sans">
-  I'm Tariq, I graduated from UM6P Morocco and currently working as a technical consultant at SAS.<br/>
-  I’m passionate about building tech projects that bring impact.<br/>
-  I consider myself a forever student, always curious to expand my knowledge in and outside of tech, amongst favorite topics are Graphical Design, Cyber Security and Pychology.<br/>
-  I regulary share educational content in the form of articles about my latest experiments.<br/>
-  If I’m not coding or working out, I like to spend my time playing videogames, watching anime and learning about different topics, I enjoy reading books and listening to podcasts.<br/>
+
+  Hi, I'm Tariq! 🎓 I graduated from UM6P 🇲🇦 and work as a technical consultant at SAS. I'm passionate about building impactful tech projects and consider myself a lifelong learner, always curious to expand my knowledge in and outside of tech. <br/>
+   Some of my favorite topics include graphical design, cyber security, and psychology. <br/>
+    I regularly share educational content through articles 📝 about my latest experiments . When I'm not coding or working out , you can find me playing video games ,watching anime, and learning about different topics 🌎. <br/>I enjoy reading books 📚 and listening to podcasts 🎧 to keep my mind engaged.
+
 
 </div>
 </div>
