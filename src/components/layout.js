@@ -17,7 +17,7 @@ const Layout = ({ location, title, children }) => {
      <div className="text-5xl md:text-7xl font-serif font-bold text-black my-5">Tariq Massaoudi
       </div>
       <div className="text-xl font-sans "><span className="font-medium">Software Engineer</span> from Morocco.<br/>
-      I do techy experiments and write about them.<br/>
+      I build digital experiences and I love what I do<br/>
       </div> 
     </div>
        
