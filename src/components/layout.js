@@ -18,7 +18,6 @@ const Layout = ({ location, title, children }) => {
       </div>
       <div className="text-xl font-sans "><span className="font-medium">Software Engineer</span> from Morocco.<br/>
       I do techy experiments and write about them.<br/>
-      I’m currently working at SAS Institute.
       </div> 
     </div>
        

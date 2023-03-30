@@ -1,7 +1,7 @@
 ---
 title: "How I Passed The AWS Solution Architect Associate (SAA-C03)"
 date: "2022-12-02T22:12:03.284Z"
-description: How linear regression works by example
+description: Tips and ressources to effectively prepare for SSA-C03
 tag: Cloud
 ---
 

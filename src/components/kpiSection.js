@@ -23,9 +23,9 @@ const KpiSection = ({data}) => {
       resultData['change_week']={'metric_value':((resultData['change_week'].metric_value/resultData['prod_number'].metric_value)*100).toFixed(2)}
       resultData['change_month']={'metric_value':((resultData['change_month'].metric_value/resultData['prod_number'].metric_value)*100).toFixed(2)}
 
-      delete Object.assign(resultData, {["Total Number of Products Tracked"]: resultData["prod_number"] })["prod_number"];
-      delete Object.assign(resultData, {["Percent of Products That Changed Price Since Last Week"]: resultData["change_week"] })["change_week"];
-      delete Object.assign(resultData, {["Percent of Products That Changed Price Since Last Month"]: resultData["change_month"] })["change_month"];
+      delete Object.assign(resultData, {"Total Number of Products Tracked": resultData["prod_number"] })["prod_number"];
+      delete Object.assign(resultData, {"Percent of Products That Changed Price Since Last Week": resultData["change_week"] })["change_week"];
+      delete Object.assign(resultData, {"Percent of Products That Changed Price Since Last Month": resultData["change_month"] })["change_month"];
       
     //   delete Object.assign(resultData, {[newKey]: resultData[oldKey] })[oldKey];
     //   delete Object.assign(resultData, {[newKey]: resultData[oldKey] })[oldKey];
@@ -52,13 +52,13 @@ const KpiSection = ({data}) => {
             if (i>0){
               return (
      
-                <KpiCard name={key} loading={loading} value={kpi[key].metric_value + " %"}/>
+                <KpiCard key={i} name={key} loading={loading} value={kpi[key].metric_value + " %"}/>
                 
               )
             }else{
               return (
      
-                <KpiCard name={key} loading={loading} value={kpi[key].metric_value}/>
+                <KpiCard key={i} name={key} loading={loading} value={kpi[key].metric_value}/>
                 
               )
             }

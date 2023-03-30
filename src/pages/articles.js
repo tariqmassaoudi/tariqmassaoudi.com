@@ -13,10 +13,10 @@ const Articles = ({ data, location }) => {
         <div className="text-3xl font-bold font-sans">Articles📝</div>
     </div>
     <div>
-      {/* <Bio /> */}
+
       <ol style={{ listStyle: `none` }}>
         {posts.map(post => {
-          const title = post.frontmatter.title || post.fields.slug
+         
 
           return (
             <div>

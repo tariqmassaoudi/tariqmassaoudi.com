@@ -124,7 +124,6 @@ const options = {
     const averagePrice=valuesArr.reduce((a, b) => a + b, 0) / Object.values(resultData).length
     const minPrice=Math.min(...valuesArr)
     const maxPrice=Math.max(...valuesArr)
-    const reversedValuesArr=valuesArr.reverse()
     const data={}
 let temp=Object.entries(resultData).splice(-1)[0][1]
 let date=null
@@ -205,7 +204,7 @@ for (const key of reversedKeys){
 
     globalHistory.listen(({action,location}) => {
       
-      if(action=='PUSH') {
+      if(action==='PUSH') {
         const params = new URLSearchParams(location.search);
         const href=params.get("href")
         setRequest({"href":href})
@@ -227,9 +226,9 @@ for (const key of reversedKeys){
         <div className="jumia-wrapper">
           <div className="flex flex-row"></div>
           <div className="grid grid-cols-12 gap-2">
-          <Link class="inline-flex col-span-1 my-auto py-2  bg-indigo-500 hover:bg-indigo-600 text-white text-sm font-medium font-sans rounded-md" to="/jumiaapp">
+          <Link className="inline-flex col-span-1 my-auto py-2  bg-indigo-500 hover:bg-indigo-600 text-white text-sm font-medium font-sans rounded-md" to="/jumiaapp">
             
-            <svg xmlns="http://www.w3.org/2000/svg"  class="w-full  h-5 my-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg xmlns="http://www.w3.org/2000/svg"  className="w-full  h-5 my-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 
 	  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6" />
 	</svg>
@@ -243,8 +242,8 @@ for (const key of reversedKeys){
 <div className="border-b-2 border-gray-100 mb-8"></div>
 
 <div className="text-3xl font-bold font-sans">Price History Graph</div>
-{loadingPriceHistory?<div class="bg-white p-2 sm:p-4 h-screen rounded-lg shadow-md flex flex-col sm:flex-row gap-10 select-none mb-2 px-2">
-    <div class="h-52 sm:h-full w-full rounded-xl bg-gray-200 animate-pulse" ></div>
+{loadingPriceHistory?<div className="bg-white p-2 sm:p-4 h-screen rounded-lg shadow-md flex flex-col sm:flex-row gap-10 select-none mb-2 px-2">
+    <div className="h-52 sm:h-full w-full rounded-xl bg-gray-200 animate-pulse" ></div>
 
 </div>:<Line options={options} data={history} />}
 

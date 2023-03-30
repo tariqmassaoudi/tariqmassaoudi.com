@@ -1,5 +1,5 @@
 import * as React from "react"
-import { Link, graphql } from "gatsby"
+import { Link } from "gatsby"
 
 const article=({key,link,date,title,description})=>{
 
@@ -32,9 +32,9 @@ return(
                     </Link>
               </article>
               
-{/* <a href="#" class="block p-6 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md hover:bg-gray-100 ">
-    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">{title}</h5>
-    <p class="font-normal text-gray-700 ">{description}</p>
+{/* <a href="#" className="block p-6 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md hover:bg-gray-100 ">
+    <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900">{title}</h5>
+    <p className="font-normal text-gray-700 ">{description}</p>
 </a> */}
 
             </li>

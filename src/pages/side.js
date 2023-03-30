@@ -2,11 +2,9 @@ import * as React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import Article from "../components/article"
 import SideCard from "../components/sidecard"
-const Articles = ({ data, location }) => {
+const SideProjects = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
-  const posts = data.allMarkdownRemark.nodes
   return (
     <div>
       <Layout location={location} title={siteTitle}>
@@ -76,14 +74,9 @@ const Articles = ({ data, location }) => {
   )
 }
 
-export default Articles
+export default SideProjects
 
-/**
- * Head export to define metadata for the page
- *
- * See: https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-head/
- */
-export const Head = () => <Seo title="Articles" />
+export const Head = () => <Seo title="Side Projects" />
 
 export const pageQuery = graphql`
   query {

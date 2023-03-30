@@ -3,7 +3,7 @@ import Tag from "./tag"
 import { Link} from "gatsby"
 
 const BlogPostCard = ({title,description,tagName,link,style}) => {
-    if (style==1){
+    if (style===1){
         return (
             <Link to={link} className="relative flex mx-auto h-[240px]  mt-4 transition ease-in-out delay-75 hover:scale-[1.02]">
               {/* Gradient background of same width & height  as Blog post card  */}
@@ -23,7 +23,7 @@ const BlogPostCard = ({title,description,tagName,link,style}) => {
               </div>
             </Link>
           );
-    }else if (style==2){
+    }else if (style===2){
         return (
             <Link to={link} className="relative flex mx-auto h-[240px] mt-4 transition ease-in-out delay-75 hover:scale-[1.02]">
               {/* Gradient background of same width & height  as Blog post card  */}

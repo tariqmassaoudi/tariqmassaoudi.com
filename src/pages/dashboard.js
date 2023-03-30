@@ -1,5 +1,4 @@
 import * as React from "react"
-import Layout from "../components/layout"
 import { graphql } from "gatsby"
 // import {VectorMap } from "@react-jvectormap/core"
 // import Morocco from "../map/morocco.json";

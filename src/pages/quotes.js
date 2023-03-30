@@ -7,7 +7,7 @@ import Quote from "../components/quote"
 
 const Quotes = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
-  const posts = data.allMarkdownRemark.nodes
+ 
 
   return (
     <div>
@@ -15,7 +15,7 @@ const Quotes = ({ data, location }) => {
       <div>
         <div className="text-3xl font-bold font-sans mt-8 mb-24">Couple of Favorite Quotes that Might Inspire You 💡</div>
      
-        <Quote author="Antoine de Saint-Exupery" body="Perfection is Achieved Not When There Is Nothing More to Add, But When There Is Nothing Left to Take Away" image="https://www.linflux.com/wp-content/uploads/2017/09/St-EX.jpg"/>
+        <Quote author="Antoine de Saint-Exupery" body="Perfection is Achieved Not When There Is Nothing More to Add, But When There Is Nothing Left to Take Away" image="https://m.media-amazon.com/images/M/MV5BYWU4ZTQ1ZTktZTc3Mi00MzllLThiN2QtNjc1ZjY5ZGQxNDdjL2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyMTc4MzI2NQ@@._V1_.jpg"/>
         <Quote author="Braum - League of Legends" body="The darker the night, the brighter the stars" image="https://i.pinimg.com/564x/c0/da/d2/c0dad2264f86c83a5265524f88192d47.jpg"/>
         <Quote author="Charlie Chaplin" body="Life is a tragedy when seen in close-up, but a comedy in long-shot." image="https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Charlie_Chaplin.jpg/819px-Charlie_Chaplin.jpg"/>
         <Quote author="Master Oogway" body="Yesterday is history. Tomorrow is a mystery. Today is a gift. That’s why we call it ‘The Present’" image="https://i.pinimg.com/736x/96/93/50/96935006e7e6f230fc9cdc93743a5a7b.jpg"/>

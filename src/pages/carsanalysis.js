@@ -19,7 +19,7 @@ import Seo from "../components/seo"
 
 
 const Quotes = ({ data, location }) => {
-  const siteTitle = data.site.siteMetadata?.title || `Title`
+  // const siteTitle = data.site.siteMetadata?.title || `Title`
 
   return (
     <div></div>

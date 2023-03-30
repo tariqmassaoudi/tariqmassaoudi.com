@@ -54,7 +54,7 @@ getCategory(category)
 
             {
                 categories.map((category,i)=>{
-                    return( <Menu.Item>
+                    return( <Menu.Item key={i}>
                         {({ active }) => (
                             // <Link className={classNames(
                             //     active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',

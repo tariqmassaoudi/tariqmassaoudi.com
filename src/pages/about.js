@@ -6,17 +6,17 @@ import Seo from "../components/seo"
 
 const About = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
-  const posts = data.allMarkdownRemark.nodes
+
 
   return (
     <div>
       <Layout location={location} title={siteTitle}>
       <div>
         <div className="text-3xl font-sans font-bold  mb-8 mt-6">About</div>
-        <div class="flex flex-col md:flex-row items-center">
+        <div className="flex flex-col md:flex-row items-center">
        
         {/* My Name is Tariq <br/> */}
-  <img class="object-fill w-48 h-48 rounded-full shadow-xl md:mr-8 mb-4" src={tariq}/>
+  <img className="object-fill w-48 h-48 rounded-full shadow-xl md:mr-8 mb-4" alt="Profile" src={tariq}/>
   <div className="text-xl font-sans">
 
   Hi, I'm Tariq! 🎓 I graduated from UM6P 🇲🇦 and work as a technical consultant at SAS. I'm passionate about building impactful tech projects and consider myself a lifelong learner, always curious to expand my knowledge in and outside of tech. <br/>
