@@ -88,7 +88,15 @@ const SideProjects = ({ data, location }) => {
             label: "Article"
           }
         ]}/>
-
+<SideCard  imageSrc={"https://user-images.githubusercontent.com/52799665/229299526-e9dc84d2-9b0c-4a19-915e-d27db850093f.png"} title={"Kmeans Animated"} description={"A simple script that generates an animation for the K means algorithm using p5.js"} 
+        
+        links={[
+          {
+            type: "github",
+            url: "https://github.com/tariqmassaoudi/KmeansVisualization",
+            label: "GitHub"
+          }
+        ]}/>
 
         </div>
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3"></div>
