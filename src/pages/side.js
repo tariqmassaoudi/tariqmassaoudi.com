@@ -59,10 +59,43 @@ const SideProjects = ({ data, location }) => {
           }
         ]}/>
 
+<SideCard  imageSrc={"https://challengedata.ens.fr/logo/public/CFM_CoRGB_300dpi_Tight_box.png"} title={"Where will the next trade take place? by CFM"} description={"Given recent trades and order books from a set of trading venues,in this project we are predicting on which trading venue the next trade will be executed."} 
+        
+        links={[
+          {
+            type: "github",
+            url: "https://github.com/tariqmassaoudi/CFM-2020-EMINES",
+            label: "GitHub"
+          },
+          {
+            type: "demo",
+            url: "https://github.com/tariqmassaoudi/CFM-2020-EMINES/raw/master/CFM-EMINES-FINAL.pptx",
+            label: "Presentation (French)"
+          }
+        ]}/>
+
+<SideCard  imageSrc={"https://camo.githubusercontent.com/d60b49350384d7cd1c7665b680abc64c9361f0c05bb057b3a9780f9851fd4af9/68747470733a2f2f6d69726f2e6d656469756d2e636f6d2f76322f726573697a653a6669743a3732302f666f726d61743a776562702f312a55636b5a766f5165417873466e4139506166547264412e706e67"} title={"Gradient Decent Animated"} description={"In this project I'm illustrating how Gradient Decent works visually using animation. It could be used as supplementary course material to explain Gradient Decent."} 
+        
+        links={[
+          {
+            type: "github",
+            url: "https://github.com/tariqmassaoudi/GradientDecentAnimated",
+            label: "GitHub"
+          },
+          {
+            type: "article",
+            url: "https://medium.com/analytics-vidhya/gradient-decent-animated-25f4bdd39109",
+            label: "Article"
+          }
+        ]}/>
+
 
         </div>
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3"></div>
     </div>
+
+
+    
 
     </Layout>
 
