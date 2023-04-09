@@ -36,6 +36,7 @@
     "react-dom": "^18.1.0",
     "react-icons": "^4.8.0",
     "react-plotly.js": "^2.6.0",
+    "reaviz": "^14.0.6",
     "typeface-merriweather": "0.0.72",
     "typeface-montserrat": "0.0.75"
   },

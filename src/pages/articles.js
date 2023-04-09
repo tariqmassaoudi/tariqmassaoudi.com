@@ -15,6 +15,7 @@ const Articles = ({ data, location }) => {
     <div>
 
       <ol style={{ listStyle: `none` }}>
+      <Article key={'key'} link={'/traintrends'} date={'APRIL 09, 2023'} title={'Strategic Train Travel in Morocco: Insights from Data Analysis'} description={'Data-driven recommendations for optimizing your train travel itinerary in Morocco'}/>
         {posts.map(post => {
          
 

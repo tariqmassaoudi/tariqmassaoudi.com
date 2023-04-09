@@ -20,7 +20,9 @@ const BlogIndex = ({ data, location }) => {
             
             <li  className="basis-1/3 cursor-pointer mr-3"  key={post.fields.slug}>
 
-<Blogcard title={title} description={post.frontmatter.description || post.excerpt} tagName={post.frontmatter.tag} link={post.fields.slug} style={index+1}/>
+              
+{index===0?<Blogcard title={"Strategic Train Travel in Morocco: Insights from Data Analysis"} description={"Data-driven recommendations for optimizing your train travel itinerary in Morocco"} tagName={"Data Analysis"} link={'/traintrends'} style={index+1}/>:<Blogcard title={title} description={post.frontmatter.description || post.excerpt} tagName={post.frontmatter.tag} link={post.fields.slug} style={index+1}/>}
+
 
           
             </li>
@@ -52,7 +54,7 @@ export const pageQuery = graphql`
     }
     allMarkdownRemark(
       sort: {fields: [frontmatter___date], order: DESC}
-      filter: {frontmatter: {title: {in: ["From Idea to Reality: Building a Price History Tool for Moroccan Ecommerce","How I Passed The AWS Solution Architect Associate (SAA-C03)","Arabic Topic Classification On The Hespress News Dataset"]}}}
+      filter: {frontmatter: {title: {in: ["From Idea to Reality: Building a Price History Tool for Moroccan Ecommerce","Arabic Topic Classification On The Hespress News Dataset","How I Passed The AWS Solution Architect Associate (SAA-C03)"]}}}
     ) {
       nodes {
         excerpt
