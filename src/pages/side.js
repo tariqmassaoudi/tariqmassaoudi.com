@@ -26,6 +26,27 @@ const SideProjects = ({ data, location }) => {
             label: "Store"
           }
         ]}/>
+          <SideCard imageSrc={"https://user-images.githubusercontent.com/52799665/233782346-9ab287cb-0619-4b97-bbcf-da168a9c1b21.png"} title={"AI Tariq🤖"} description={"Using LangChain, Pinecone & my ChatLogs to create an AI that simulates my personlaity. Demo backend built with FastApi hosted on ECS"}
+        
+        
+        links={[
+          {
+            type: "github",
+            url: "https://github.com/tariqmassaoudi/aitariq_notebooks",
+            label: "GitHub"
+          },
+          {
+            type: "demo",
+            url: "https://aitariq.tariqmassaoudi.com/",
+            label: "Demo"
+          }
+          ,
+          {
+            type: "article",
+            url: "https://tariqmassaoudi.medium.com/how-i-created-an-ai-clone-of-myself-48f4452c6adf",
+            label: "Article"
+          }
+        ]}/>
 
 <SideCard  imageSrc={"https://user-images.githubusercontent.com/52799665/228613935-3e22aa58-bb38-4feb-8592-11f67e3715c4.png"} title={"Price History"} description={"Shows the price history for E-commerce products in Morocco. Designed to run for free on AWS free tier. One command deployement with Terraform"} 
         

@@ -15,15 +15,22 @@ const Articles = ({ data, location }) => {
     <div>
 
       <ol style={{ listStyle: `none` }}>
-      <Article key={'key'} link={'/traintrends'} date={'APRIL 09, 2023'} title={'Strategic Train Travel in Morocco: Insights from Data Analysis'} description={'Data-driven recommendations for optimizing your train travel itinerary in Morocco'}/>
-        {posts.map(post => {
+        {posts.map((post,index) => {
          
+          if (index==1){
+            return (<div>
+                    <Article key={'key'} link={'/traintrends'} date={'APRIL 09, 2023'} title={'Strategic Train Travel in Morocco: Insights from Data Analysis'} description={'Data-driven recommendations for optimizing your train travel itinerary in Morocco'}/>
 
-          return (
-            <div>
-            <Article key={post.fields.slug} link={post.fields.slug} date={post.frontmatter.date} title={post.frontmatter.title || post.fields.slug} description={post.frontmatter.description || post.excerpt}/>
-            </div>
-          )
+              <Article key={post.fields.slug} link={post.fields.slug} date={post.frontmatter.date} title={post.frontmatter.title || post.fields.slug} description={post.frontmatter.description || post.excerpt}/>
+              </div>)
+          }else{
+            return (
+              <div>
+              <Article key={post.fields.slug} link={post.fields.slug} date={post.frontmatter.date} title={post.frontmatter.title || post.fields.slug} description={post.frontmatter.description || post.excerpt}/>
+              </div>
+            )
+          }
+          
         })}
       </ol>
   
