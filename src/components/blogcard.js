@@ -2,7 +2,8 @@ import * as React from "react"
 import Tag from "./tag"
 import { Link} from "gatsby"
 
-const BlogPostCard = ({title,description,tagName,link,style}) => {
+const BlogPostCard = ({title,description,tags,link,style}) => {
+
     if (style===1){
         return (
             <Link to={link} className="relative flex mx-auto h-[240px]  mt-4 transition ease-in-out delay-75 hover:scale-[1.02]">
@@ -18,7 +19,11 @@ const BlogPostCard = ({title,description,tagName,link,style}) => {
                       {description}
                     </p>
                   </div>
-                  <Tag tagName={tagName}/>
+                  <div className="flex space-x-1">
+                  {tags?.map((tagName) => <Tag tagName={tagName}/>)}
+                  </div>
+                
+                
                 </div>
               </div>
             </Link>
@@ -38,7 +43,9 @@ const BlogPostCard = ({title,description,tagName,link,style}) => {
                       {description}
                     </p>
                   </div>
-                  <Tag tagName={tagName}/>
+                  <div className="flex space-x-1">
+                  {tags?.map((tagName) => <Tag tagName={tagName}/>)}
+                  </div>
                 </div>
               </div>
             </Link>
@@ -58,7 +65,9 @@ const BlogPostCard = ({title,description,tagName,link,style}) => {
                       {description}
                     </p>
                   </div>
-                  <Tag tagName={tagName}/>
+                  <div className="flex space-x-1">
+                  {tags?.map((tagName) => <Tag tagName={tagName}/>)}
+                  </div>
                 </div>
               </div>
             </Link>

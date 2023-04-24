@@ -20,8 +20,9 @@ const BlogIndex = ({ data, location }) => {
             
             <li  className="basis-1/3 cursor-pointer mr-3"  key={post.fields.slug}>
 
-              
-{index===0?<Blogcard title={"Strategic Train Travel in Morocco: Insights from Data Analysis"} description={"Data-driven recommendations for optimizing your train travel itinerary in Morocco"} tagName={"Data Analysis"} link={'/traintrends'} style={index+1}/>:<Blogcard title={title} description={post.frontmatter.description || post.excerpt} tagName={post.frontmatter.tag} link={post.fields.slug} style={index+1}/>}
+           
+{index===0?<Blogcard title={"Strategic Train Travel in Morocco: Insights from Data Analysis"} description={"Data-driven recommendations for optimizing your train travel itinerary in Morocco"} tags={["Data Analysis","Scraping"]} link={'/traintrends'} style={index+1}/>:
+<Blogcard title={title} description={post.frontmatter.description || post.excerpt} tags={post.frontmatter.tag.split(',')} link={post.fields.slug} style={index+1}/>}
 
 
           
