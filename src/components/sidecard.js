@@ -1,7 +1,7 @@
 import React from "react";
 import { FaGithub, FaExternalLinkAlt, FaNewspaper } from "react-icons/fa";
 
-const SideCard = ({ imageSrc, title, description, links }) => {
+const SideCard = ({ imageSrc, title, description, links, target="_blank"}) => {
   return (
     <div className="rounded-lg shadow-lg overflow-hidden inline-block flex flex-col">
       <img
@@ -16,7 +16,7 @@ const SideCard = ({ imageSrc, title, description, links }) => {
       <div className="flex justify-center mb-6">
         <div className="flex items-center mt-auto">
           {links.map((link) => (
-            <a target="_blank"
+            <a target={target}
               rel="noopener noreferrer"
               href={link.url}
               key={link.type}

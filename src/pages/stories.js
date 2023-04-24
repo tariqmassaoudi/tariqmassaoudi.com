@@ -11,7 +11,7 @@ const SideProjects = ({ data, location }) => {
       <div>
         <div className="text-3xl font-bold font-sans mb-6">Data Stories📈</div>
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-2 ">
-        <SideCard imageSrc={"https://user-images.githubusercontent.com/52799665/233963391-d40d1849-5913-40dd-98ee-4be32ee1c75e.png"} title={"What's the optimal time to book your train trip in Morocco?"} description={"Analyzing data from ONCF train ticket prices to extract insights about train travel in Morocco"}
+        <SideCard target="_self" imageSrc={"https://user-images.githubusercontent.com/52799665/233963391-d40d1849-5913-40dd-98ee-4be32ee1c75e.png"} title={"What's the optimal time to book your train trip in Morocco?"} description={"Analyzing data from ONCF train ticket prices to extract insights about train travel in Morocco"}
         
         
         links={[

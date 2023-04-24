@@ -12,11 +12,12 @@ const SideProjects = ({ data, location }) => {
       <div>
         <div className="text-3xl font-bold font-sans mb-6">Side Projects🔨</div>
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 ">
-        <SideCard imageSrc={"https://user-images.githubusercontent.com/52799665/233961207-370cf384-f032-4845-a758-145fecec68ae.png"} title={"Data Stories"} description={"A collection of data visualizations answering meaningful questions. Data is scraped then cleaned & analyzed to produce delightful stories☀️"}
+        <SideCard target="_self" imageSrc={"https://user-images.githubusercontent.com/52799665/233961207-370cf384-f032-4845-a758-145fecec68ae.png"} title={"Data Stories"} description={"A collection of data visualizations answering meaningful questions. Data is scraped then cleaned & analyzed to produce delightful stories☀️"}
         
         
         links={[
           {
+          
             type: "demo",
             url: "/stories",
             label: "Stories"
