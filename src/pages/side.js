@@ -5,27 +5,45 @@ import Seo from "../components/seo"
 import SideCard from "../components/sidecard"
 const SideProjects = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
-  return (
+  
+    return (
     <div>
       <Layout location={location} title={siteTitle}>
       <div>
         <div className="text-3xl font-bold font-sans mb-6">Side Projects🔨</div>
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 ">
-        <SideCard imageSrc={"https://user-images.githubusercontent.com/52799665/228668958-1f387f5d-93c3-4bc0-968b-e5b2fb8ce36a.png"} title={"Two Subs"} description={"Add two subtitles simultaneously to any video. A library of Anime ENG and JP subtitles is integrated for convinient japanese learning"}
+        <SideCard imageSrc={"https://user-images.githubusercontent.com/52799665/233961207-370cf384-f032-4845-a758-145fecec68ae.png"} title={"Data Stories"} description={"A collection of data visualizations answering meaningful questions. Data is scraped then cleaned & analyzed to produce delightful stories☀️"}
         
         
         links={[
           {
+            type: "demo",
+            url: "/stories",
+            label: "Stories"
+          }
+        ]}/>
+
+<SideCard  imageSrc={"https://user-images.githubusercontent.com/52799665/228613935-3e22aa58-bb38-4feb-8592-11f67e3715c4.png"} title={"Price History"} description={"Shows the price history for E-commerce products in Morocco. Designed to run for free on AWS free tier. One command deployement with Terraform"} 
+        
+        links={[
+          {
             type: "github",
-            url: "https://github.com/tariqmassaoudi/two-subs",
+            url: "https://github.com/tariqmassaoudi/price_history_terraform",
             label: "GitHub"
           },
           {
             type: "demo",
-            url: "https://chrome.google.com/webstore/detail/two-subs/cnjikeeaencmehgpfdfibincicljleoa?hl=en&authuser=1",
-            label: "Store"
+            url: "https://www.tariqmassaoudi.com/jumiaapp/",
+            label: "Demo"
+          },
+          {
+            type: "article",
+            url: "https://www.tariqmassaoudi.com/jumia-price-comparator/",
+            label: "Article"
           }
         ]}/>
+
+       
           <SideCard imageSrc={"https://user-images.githubusercontent.com/52799665/233782346-9ab287cb-0619-4b97-bbcf-da168a9c1b21.png"} title={"AI Tariq🤖"} description={"Using LangChain, Pinecone & my ChatLogs to create an AI that simulates my personlaity. Demo backend built with FastApi hosted on ECS"}
         
         
@@ -47,24 +65,19 @@ const SideProjects = ({ data, location }) => {
             label: "Article"
           }
         ]}/>
-
-<SideCard  imageSrc={"https://user-images.githubusercontent.com/52799665/228613935-3e22aa58-bb38-4feb-8592-11f67e3715c4.png"} title={"Price History"} description={"Shows the price history for E-commerce products in Morocco. Designed to run for free on AWS free tier. One command deployement with Terraform"} 
+ <SideCard imageSrc={"https://user-images.githubusercontent.com/52799665/228668958-1f387f5d-93c3-4bc0-968b-e5b2fb8ce36a.png"} title={"Two Subs"} description={"Add two subtitles simultaneously to any video. A library of Anime ENG and JP subtitles is integrated for convinient japanese learning"}
+        
         
         links={[
           {
             type: "github",
-            url: "https://github.com/tariqmassaoudi/price_history_terraform",
+            url: "https://github.com/tariqmassaoudi/two-subs",
             label: "GitHub"
           },
           {
             type: "demo",
-            url: "https://www.tariqmassaoudi.com/jumiaapp/",
-            label: "Demo"
-          },
-          {
-            type: "article",
-            url: "https://www.tariqmassaoudi.com/jumia-price-comparator/",
-            label: "Article"
+            url: "https://chrome.google.com/webstore/detail/two-subs/cnjikeeaencmehgpfdfibincicljleoa?hl=en&authuser=1",
+            label: "Store"
           }
         ]}/>
 

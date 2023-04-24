@@ -16,7 +16,8 @@ const SideCard = ({ imageSrc, title, description, links }) => {
       <div className="flex justify-center mb-6">
         <div className="flex items-center mt-auto">
           {links.map((link) => (
-            <a
+            <a target="_blank"
+              rel="noopener noreferrer"
               href={link.url}
               key={link.type}
               className="flex items-center mr-4 text-green-600 hover:underline"

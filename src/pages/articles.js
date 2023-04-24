@@ -17,7 +17,7 @@ const Articles = ({ data, location }) => {
       <ol style={{ listStyle: `none` }}>
         {posts.map((post,index) => {
          
-          if (index==1){
+          if (index===1){
             return (<div>
                     <Article key={'key'} link={'/traintrends'} date={'APRIL 09, 2023'} title={'Strategic Train Travel in Morocco: Insights from Data Analysis'} description={'Data-driven recommendations for optimizing your train travel itinerary in Morocco'}/>
 
