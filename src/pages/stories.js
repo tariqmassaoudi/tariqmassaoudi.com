@@ -22,7 +22,7 @@ const SideProjects = ({ data, location }) => {
           },
           {
             type: "demo",
-            url: "https://media.licdn.com/dms/document/D4E1FAQH9ZRgSZez7nA/feedshare-document-pdf-analyzed/0/1681050572924?e=1683158400&v=beta&t=AI6GIJ8WN7Kz5mf7GpdZf_VsJ1IxK0dAYcZ9m61lekQ",
+            url: "https://portfoliotariq.s3.amazonaws.com/train.pdf",
             label: "PDF"
           }
         ]}/>
@@ -36,7 +36,7 @@ const SideProjects = ({ data, location }) => {
         links={[
           {
             type: "demo",
-            url: "https://media.licdn.com/dms/document/D4E1FAQF5FGufkQQodg/feedshare-document-pdf-analyzed/0/1667573271426?e=1683158400&v=beta&t=-7E4H358VfL5mFEN6kyRfI9ICjZp0Jk1divqWpK6SgU",
+            url: "https://portfoliotariq.s3.amazonaws.com/blackfriday.pdf",
             label: "PDF"
           }
         ]}/>
@@ -47,7 +47,7 @@ const SideProjects = ({ data, location }) => {
           
           {
             type: "demo",
-            url: "https://media.licdn.com/dms/document/C4E1FAQGVe4ejG8NN-w/feedshare-document-pdf-analyzed/0/1671359652218?e=1683158400&v=beta&t=nvCHiAuKPqWh7gXjYyafRCXwbWHc_cAlg_5bHyEj0Y4",
+            url: "https://portfoliotariq.s3.amazonaws.com/car.pdf",
             label: "PDF"
           }
        
@@ -59,7 +59,7 @@ const SideProjects = ({ data, location }) => {
          
           {
             type: "demo",
-            url: "https://dms.licdn.com/playlist/C4E05AQHU0QgxD_DFGg/mp4-720p-30fp-crf28/0/1669309115048?e=1682935200&v=beta&t=lSludZB7IxXm6yyyUtsAtRDt4-nrupZaZ9WLowY8pKc",
+            url: "https://portfoliotariq.s3.amazonaws.com/inflation_morocco_1.mp4",
             label: "Animation"
           }
         ]}/>
