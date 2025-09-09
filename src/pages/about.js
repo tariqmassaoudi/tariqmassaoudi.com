@@ -1,6 +1,6 @@
 import * as React from "react"
 import {  graphql } from "gatsby"
-import tariq from "../images/tariq.jpg"
+// import tariq from "../images/tariq.jpg"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
@@ -16,12 +16,12 @@ const About = ({ data, location }) => {
         <div className="flex flex-col md:flex-row items-center">
        
         {/* My Name is Tariq <br/> */}
-  <img className="object-fill w-48 h-48 rounded-full shadow-xl md:mr-8 mb-4" alt="Profile" src={tariq}/>
+  <img className="object-fill w-48 h-48 rounded-full shadow-xl md:mr-8 mb-4" alt="Profile" src="https://media.licdn.com/dms/image/v2/D4E03AQFuc5LvZwCmGA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1694976208502?e=2147483647&v=beta&t=HvLBBAEiLvyrr5QNT__r33UHvbx7Xc6kU3rd0DjrSHg"/>
   <div className="text-xl font-sans">
 
-  Hi, I'm Tariq! 🎓 I graduated from UM6P 🇲🇦 and work as a technical consultant at SAS. I'm passionate about building impactful tech projects and consider myself a lifelong learner, always curious to expand my knowledge in and outside of tech. <br/>
-   Some of my favorite topics include graphical design, cyber security, and psychology. <br/>
-    I regularly share educational content through articles 📝 about my latest experiments . When I'm not coding or working out , you can find me playing video games ,watching anime, and learning about different topics 🌎. <br/>I enjoy reading books 📚 and listening to podcasts 🎧 to keep my mind engaged.
+  Hi, I'm Tariq! 👋 I'm a Solutions Architect with a passion for building scalable, impactful systems that solve real-world problems. I design and implement complex distributed architectures using cloud technologies like Azure and AWS ☁️ <br/>
+   I have experience across the full technology stack - from data pipelines and search APIs to fraud detection platforms and automation systems. My background spans fintech, insurance, and enterprise software 💼 <br/>
+    Beyond work, I'm genuinely curious about technology trends, cybersecurity 🔐, and human psychology. I enjoy sharing what I learn through technical articles and side projects. When I'm not architecting solutions, you'll find me gaming 🎮, watching anime, or diving into a good book 📚 on productivity or philosophy.
 
 
 </div>
