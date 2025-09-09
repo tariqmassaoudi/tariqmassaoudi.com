@@ -24,6 +24,16 @@ const SideProjects = ({ data, location }) => {
           }
         ]}/>
 
+<SideCard imageSrc={"https://github.com/tariqmassaoudi/pr-buddy/raw/main/chrome-extension/src/assets/icon128.png"} title={"PR Buddy"} description={"AI-powered tool for creating and reviewing pull requests in Azure DevOps. Combines LangGraph AI Agents for generating PR descriptions and code reviews with a Chrome Extension that seamlessly integrates with Azure DevOps"}
+        
+        links={[
+          {
+            type: "github",
+            url: "https://github.com/tariqmassaoudi/pr-buddy",
+            label: "GitHub"
+          }
+        ]}/>
+
 <SideCard  imageSrc={"https://user-images.githubusercontent.com/52799665/228613935-3e22aa58-bb38-4feb-8592-11f67e3715c4.png"} title={"Price History"} description={"Shows the price history for E-commerce products in Morocco. Designed to run for free on AWS free tier. One command deployement with Terraform"} 
         
         links={[
@@ -31,11 +41,6 @@ const SideProjects = ({ data, location }) => {
             type: "github",
             url: "https://github.com/tariqmassaoudi/price_history_terraform",
             label: "GitHub"
-          },
-          {
-            type: "demo",
-            url: "https://www.tariqmassaoudi.com/jumiaapp/",
-            label: "Demo"
           },
           {
             type: "article",
@@ -109,7 +114,7 @@ const SideProjects = ({ data, location }) => {
           }
         ]}/>
 
-<SideCard  imageSrc={"https://camo.githubusercontent.com/d60b49350384d7cd1c7665b680abc64c9361f0c05bb057b3a9780f9851fd4af9/68747470733a2f2f6d69726f2e6d656469756d2e636f6d2f76322f726573697a653a6669743a3732302f666f726d61743a776562702f312a55636b5a766f5165417873466e4139506166547264412e706e67"} title={"Gradient Decent Animated"} description={"In this project I'm illustrating how Gradient Decent works visually using animation. It could be used as supplementary course material to explain Gradient Decent."} 
+<SideCard  imageSrc={"https://spotintelligence.com/wp-content/uploads/2024/05/batch-gradient-descent.jpg"} title={"Gradient Decent Animated"} description={"In this project I'm illustrating how Gradient Decent works visually using animation. It could be used as supplementary course material to explain Gradient Decent."} 
         
         links={[
           {
