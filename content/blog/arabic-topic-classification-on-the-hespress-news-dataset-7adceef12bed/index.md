@@ -50,18 +50,22 @@ Let’s start by loading the data:
 
 Since the data is stored in different files, each file contains data for a specific topic, we’ll have to loop over the topics and concatenate results.
 
-    import pandas as pd
-    stories=pd.DataFrame()
-    topics["tamazight","sport","societe","regions","politique","orbites","medias","marocains-du-monde","faits-divers","economie","art-et-culture"]
+```python
+import pandas as pd
+stories=pd.DataFrame()
+topics=["tamazight","sport","societe","regions","politique","orbites","medias","marocains-du-monde","faits-divers","economie","art-et-culture"]
 
-    for topic in topics:
-      stories=pd.concat([stories,pd.read_csv("stories_"+topic+".csv")])
+for topic in topics:
+  stories=pd.concat([stories,pd.read_csv("stories_"+topic+".csv")])
 
-    stories.drop(columns=["Unnamed: 0"],axis=1,inplace=True)
+stories.drop(columns=["Unnamed: 0"],axis=1,inplace=True)
+```
 
 Next let’s get a sample from the data:
 
-    stories.sample(5)
+```python
+stories.sample(5)
+```
 
 ![Sample columns from the stories dataset](https://cdn-images-1.medium.com/max/2252/1*_uM4fxYgLH_PrQ_zWbZHcg.png)*Sample columns from the stories dataset*
 
@@ -69,9 +73,11 @@ We can see that we have 5 columns, for this article we are only interested in th
 
 Now let’s check how much stories we have in each topic, this is extremely important for classification since if we have an **imbalanced dataset **i.e.(we have a lot more datapoints in a topic than the others) our model will be biased and won’t work as well. If we have this problem one common solution is to apply an **under sampling** or **oversampling** method, we won’t go over the details since it’s not in the scope of our article.
 
-    import seaborn as sns
-    storiesByTopic=stories.groupby(by="topic").count()["story"]
-    sns.barplot(x=storiesByTopic.index,y=storiesByTopic)
+```python
+import seaborn as sns
+storiesByTopic=stories.groupby(by="topic").count()["story"]
+sns.barplot(x=storiesByTopic.index,y=storiesByTopic)
+```
 
 ![Count of stories by topic](https://cdn-images-1.medium.com/max/2282/1*Tnrx36tYvfFLtTtInoyKCQ.png)*Count of stories by topic*
 
@@ -87,21 +93,25 @@ We are dealing with Arabic text data. Our data cleaning process will consist of 
 
 The stop words list that I used is available on [Github](https://github.com/mohataher/arabic-stop-words/blob/master/list.txt)
 
-    from nltk.tokenize import word_tokenize
+```python
+from nltk.tokenize import word_tokenize
 
-    file1 = open('stopwordsarabic.txt', 'r', encoding='utf-8') 
-    stopwords_arabic = file1.read().splitlines()+["المغرب","المغربية","المغربي"]
+file1 = open('stopwordsarabic.txt', 'r', encoding='utf-8') 
+stopwords_arabic = file1.read().splitlines()+["المغرب","المغربية","المغربي"]
 
-    def removeStopWords(text,stopwords):
-        text_tokens = word_tokenize(text)
-        return " ".join([word for word in text_tokens if not word in stopwords])
+def removeStopWords(text,stopwords):
+    text_tokens = word_tokenize(text)
+    return " ".join([word for word in text_tokens if not word in stopwords])
+```
 
 **Removing Punctuation**: For the same reason we’ll be removing punctuation, for this I’ve used a Regex expression.
 
-    from nltk.tokenize import RegexpTokenizer
-    def removePunctuation(text):
-        tokenizer = RegexpTokenizer(r'\w+')
-        return " ".join(tokenizer.tokenize(text))
+```python
+from nltk.tokenize import RegexpTokenizer
+def removePunctuation(text):
+    tokenizer = RegexpTokenizer(r'\w+')
+    return " ".join(tokenizer.tokenize(text))
+```
 
 ## **Drawing a WordCloud:**
 
@@ -109,21 +119,23 @@ Let’s have some fun, we’re going to be drawing a Word Cloud off all the stor
 
 Before doing so there’s some extra steps needed that are specific for Arabic, to learn more about them visit this [link](https://amueller.github.io/word_cloud/auto_examples/arabic.html).
 
-    import arabic_reshaper
-    from bidi.algorithm import get_display
-    import matplotlib.pyplot as plt
-    %matplotlib inline
+```python
+import arabic_reshaper
+from bidi.algorithm import get_display
+import matplotlib.pyplot as plt
+%matplotlib inline
 
-    def preprocessText(text,stopwords,wordcloud=False):
-        noStop=removeStopWords(text,stopwords)
-        noPunctuation=removePunctuation(noStop)
-        if wordcloud:
-            text=arabic_reshaper.reshape(noPunctuation)
-            text=get_display(text)
-            return text
-        return noPunctuation
+def preprocessText(text,stopwords,wordcloud=False):
+    noStop=removeStopWords(text,stopwords)
+    noPunctuation=removePunctuation(noStop)
+    if wordcloud:
+        text=arabic_reshaper.reshape(noPunctuation)
+        text=get_display(text)
+        return text
+    return noPunctuation
 
-    drawWordcloud(stories.story,stopwords_arabic)
+drawWordcloud(stories.story,stopwords_arabic)
+```
 
 ![Word Cloud of Hespress News Articles](https://cdn-images-1.medium.com/max/2280/1*Uc9cBE2aEXJRMDAuLrFIKA.png)*Word Cloud of Hespress News Articles*
 
@@ -143,16 +155,17 @@ This one is very simple, every columns represents a word from the entire stories
 
 We will be using TF-IDF since it in most cases it yields better performance!
 
-    from sklearn.feature_extraction.text import TfidfVectorizer
+```python
+from sklearn.feature_extraction.text import TfidfVectorizer
 
-    #Clean the stories 
-    stories["storyClean"]=stories["story"].apply(lambda s: preprocessText(s,stopwords_arabic))
+#Clean the stories 
+stories["storyClean"]=stories["story"].apply(lambda s: preprocessText(s,stopwords_arabic))
 
-    #Vectorize the stories
-
-    vectorizer = TfidfVectorizer()
-    X = vectorizer.fit_transform(stories["storyClean"])
-    y=stories.topic
+#Vectorize the stories
+vectorizer = TfidfVectorizer()
+X = vectorizer.fit_transform(stories["storyClean"])
+y=stories.topic
+```
 
 ## **Modelling:**
 
@@ -165,21 +178,24 @@ We will try the following models:
 
 We will run the data through each model and use the **accuracy** which is the ratio of correct predictions and total datapoints as our metric, for more accurate results we have used cross validation with 5 folds for our scoring then we will be plotting the results.
 
-    from sklearn.model_selection import train_test_split
-    from sklearn.metrics import accuracy_score
-    from sklearn.model_selection import cross_val_score
-    import numpy as np
-    from sklearn.metrics import classification_report
-    def testModel(model,X,y):
-        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-        model.fit(X_train,y_train)
-        modelName = type(model).__name__
-        pred=model.predict(X_test)
-        print(modelName)
-        print(classification_report(y_test,model.predict(X_test)))
-        score=np.mean(cross_val_score(model, X, y, cv=5))
-    
-        return model,{"model":modelName,"score":score}
+```python
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import accuracy_score
+from sklearn.model_selection import cross_val_score
+import numpy as np
+from sklearn.metrics import classification_report
+
+def testModel(model,X,y):
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+    model.fit(X_train,y_train)
+    modelName = type(model).__name__
+    pred=model.predict(X_test)
+    print(modelName)
+    print(classification_report(y_test,model.predict(X_test)))
+    score=np.mean(cross_val_score(model, X, y, cv=5))
+
+    return model,{"model":modelName,"score":score}
+```
 
 ![Models accuracy](https://cdn-images-1.medium.com/max/2272/1*0roKplrxJ6UXDwdAmaTxqg.png)*Models accuracy*
 

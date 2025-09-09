@@ -41,20 +41,23 @@ Bubble sort on the example array
 
 You could ask yourself. Well how many repetitions should I perform? It turns out that the maximum needed is (**length of the array -1**) for our example if the array we had to do 2 repetitions , if the array was completely disordered we would have to do 3!
 
+{{ ... }}
+You could ask yourself. Well how many repetitions should I perform? It turns out that the maximum needed is (**length of the array -1**) for our example if the array we had to do 2 repetitions , if the array was completely disordered we would have to do 3!
+
 # Bubble sort in code:
 
 Finally here’s an implementation of bubble sort in code.
-```
+```python
 def bubbleSort(arr):
-#get the length of the array
-n = len(arr)
-# Traverse through all the elements of the array
-for i in range(n):
-for j in range(0, n-1):
-# if the current element is larger than the next one swap
-if arr[j] > arr[j+1] :
-#this is the python shorcut for swapping
-arr[j], arr[j+1] = arr[j+1], arr[j]
+    #get the length of the array
+    n = len(arr)
+    # Traverse through all the elements of the array
+    for i in range(n):
+        for j in range(0, n-1):
+            # if the current element is larger than the next one swap
+            if arr[j] > arr[j+1] :
+                #this is the python shorcut for swapping
+                arr[j], arr[j+1] = arr[j+1], arr[j]
 ```
 # How fast is bubble sort?
 

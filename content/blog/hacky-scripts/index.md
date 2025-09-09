@@ -45,31 +45,41 @@ If you’ve ever worked with  `pip`  and  `requirements.txt`, you've likely run 
 
 Install Poetry
 
+```bash
 curl -sSL https://install.python-poetry.org | python3 -
+```
 
 Initialize Your Project
 
+```bash
 poetry init
+```
 
 This command walks you through setting up your  `pyproject.toml`, where all your dependencies are stored.
 
 Add Dependencies:
 
+```bash
 poetry add fastapi
+```
 
-This installs Flask and updates your  `pyproject.toml`  and  `poetry.lock`. For development dependencies like linters or testing tools, use:
+This installs FastAPI and updates your  `pyproject.toml`  and  `poetry.lock`. For development dependencies like linters or testing tools, use:
 
+```bash
 poetry add --dev black
+```
 
-You can install all dependecies of a particual project using:
+You can install all dependencies of a particular project using:
 
+```bash
 poetry install
+```
 
-This install everything in  `poetry.lock`
+This installs everything in  `poetry.lock`
 
 ## Virtual Environments: The Power of Isolation 🐍
 
-If you’ve ever juggled multiple Python projects, each requiring different libraries or even different versions of Python. You’ve probably ran intro issues with dependency conflics or global instalations breaking!
+If you’ve ever juggled multiple Python projects, each requiring different libraries or even different versions of Python. You’ve probably ran into issues with dependency conflicts or global installations breaking!
 
 This is where  **virtual environments**  become a developer’s best friend — they allow each project to have its own isolated setup, free from the chaos of conflicting versions.
 
@@ -77,22 +87,28 @@ This is where  **virtual environments**  become a developer’s best friend — 
 
 Pyenv allows you to install and switch between different Python versions effortlessly, right from your terminal.
 
-### Example senario with pyenv:
+### Example Scenario with Pyenv:
 
-Imagine you’re working on a new project that needs Python 3.10 for its features, but you have another project stuck on Python 3.8. Let’s solve this issue with pyenv
+Imagine you’re working on a new project that needs Python 3.10 for its features, but you have another project stuck on Python 3.8. Let’s solve this issue with Pyenv
 
 **Install Pyenv**: First, install Pyenv with a simple command:
 
+```bash
 curl https://pyenv.run | bash
+```
 
 **Install Multiple Python Versions**: Use Pyenv to install Python 3.8 and Python 3.10
 
+```bash
 pyenv install 3.10.0  
 pyenv install 3.8.10
+```
 
 **Switching Between Versions**: To set Python 3.10 globally, run:
 
+```bash
 pyenv global 3.10.0
+```
 
 ## Formatters, Linters and Beyond 🧼
 
@@ -106,18 +122,24 @@ For example, here’s a before and after comparison of code formatted by Black:
 
 Before:
 
+```python
 def add_numbers(a,b): return a+b
+```
 
 After:
 
+```python
 def add_numbers(a, b):  
     return a + b
+```
 
 Black follows the PEP 8 style guidelines for python, refer to the guide  [here](https://peps.python.org/pep-0008/)
 
 you can use Black after installing it with pip from the command line:
 
+```bash
 black folder_needs_fomatting
+```
 
 You can also install it into VS code and set the editor to apply black whenever you save a python file which is the most convenient method.
 
@@ -131,8 +153,10 @@ While Black focuses on formatting,  **Flake8**  takes care of code quality by de
 
 For example, Flake8 might flag the following code:
 
+```python
 def calculate_total():  
  return total # undefined variable
+```
 
 Flake8 would catch that  `total`  is used before being defined, preventing a runtime error later.
 
@@ -152,15 +176,18 @@ Subscribe
 
 Before isort:
 
+```python
 import os  
 import requests  
 from django.shortcuts import render  
 import sys  
 from .models import Product  
 import json
+```
 
 After isort:
 
+```python
 import json  
 import os  
 import sys  
@@ -169,6 +196,7 @@ import requests
 from django.shortcuts import render  
   
 from .models import Product
+```
 
 With isort, standard library imports, third-party dependencies, and local application imports are neatly separated, following Python’s best practices.
 
@@ -178,10 +206,12 @@ In addition to formatters and linters,  **Mypy**  adds static type checking to y
 
 For instance, Mypy would catch the following type mismatch:
 
+```python
 def add_numbers(a: int, b: int) -> int:  
     return a + b  
   
-add_numbers("1", 2)  # Mypy will flag this! 
+add_numbers("1", 2)  # Mypy will flag this!
+```
 
 For seamless development, you can also configure Mypy with VS code
 
@@ -195,14 +225,18 @@ How can you be sure that your code does what it’s supposed to — and keeps wo
 
 Suppose you have a function that adds two numbers:
 
+```python
 def add_numbers(a, b):  
     return a + b
+```
 
 Now, let’s write a test for it using Pytest:
 
+```python
 def test_add_numbers():  
     assert add_numbers(2, 3) == 5  
     assert add_numbers(-1, 1) == 0
+```
 
 To run the test, just execute  `pytest`  in your terminal, and Pytest will find and run all your test cases automatically.
 
@@ -226,11 +260,13 @@ Makefiles allow you to define a series of commands in a file (`Makefile`), which
 
 A Makefile consists of  **rules**, which are written in the format:
 
+```makefile
 target: dependencies  
     command
+```
 
 -   **Target**: This is the name of the task you want to run. It can be anything you choose, like  `format`,  `test`, or  `build`.
--   **Dependencies**: These are files or targets that must be up-to-date before the current target runs. While they are more commonly used in software compilation, in Python projects, we don’t usually use themunless specific files must be checked before a command runs.
+-   **Dependencies**: These are files or targets that must be up-to-date before the current target runs. While they are more commonly used in software compilation, in Python projects, we don’t usually use them unless specific files must be checked before a command runs.
 -   **Command**: This is the shell command to execute when the target is called. Commands must be indented with a  **tab**, which is a common source of errors when writing Makefiles.
 
 ### Makefile through an example
@@ -243,6 +279,7 @@ Let’s walk through an example. Suppose your project frequently requires the fo
 
 **Create a File Named** `**Makefile**`  in the root directory of your project. It should have no extension.
 
+```makefile
 all: format lint test  
   
 format:  
@@ -253,10 +290,11 @@ lint:
   
 test:  
     pytest
+```
 
 Here, the  `all`  target runs  `format`,  `lint`, and  `test`  in that order. When you type  `make all`, all three tasks are executed.
 
-For a more in depth guide check this  [article](https://medium.com/aigent/makefiles-for-python-and-beyond-5cf28349bf05)
+For a more in-depth guide check this  [article](https://medium.com/aigent/makefiles-for-python-and-beyond-5cf28349bf05)
 
 ## CI/CD: Automate Testing, Formatting, and Code Quality 🚀
 
@@ -272,6 +310,7 @@ With your code formatted, tested, and linted, how can you ensure that every chan
 
 Create a  `.github/workflows/ci.yml`  file in your project and add the following configuration:
 
+```yaml
 name: CI Pipeline  
   
 on:  
@@ -291,6 +330,7 @@ jobs:
       - run: poetry run black --check .  
       - run: poetry run flake8  
       - run: poetry run pytest
+```
 
 This pipeline runs  **Black**,  **Flake8**, and  **Pytest**  on each push to  `main`
 
@@ -306,15 +346,18 @@ Let’s say you have a function that works but could be cleaner:
 
 Before:
 
+```python
 def process_data(data):  
     result = []  
     for item in data:  
         if item['age'] > 18:  
             result.append(item['name'].upper())  
     return result
+```
 
 **After Refactoring**
 
+```python
 ADULT_AGE = 18  
   
 def is_adult(person):  
@@ -325,6 +368,7 @@ def get_name_uppercase(person):
   
 def process_data(data):  
     return [get_name_uppercase(person) for person in data if is_adult(person)]
+```
 
 The code is now split into small, meaningful functions with clear names.
 

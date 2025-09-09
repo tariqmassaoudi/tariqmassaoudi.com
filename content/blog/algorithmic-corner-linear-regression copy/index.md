@@ -51,61 +51,67 @@ To apply what we learned we’ll be using a machine learning library in python c
 ![](https://miro.medium.com/max/700/1*OLzEqZ8c5gFdH66DJtdoxw.png)
 
 The cleaning part is already done so we’re gonna test the models directly. We’ll start by a simple linear regression model.We’ll be splitting the data into test and train. 80% of the data for training and 20% for testing and we’ll check our R-squared score on the training set.
-```
-from sklearn.model_selection import train_test_splitX = auto_data.drop('price', axis=1)  
+```python
+from sklearn.model_selection import train_test_split
+X = auto_data.drop('price', axis=1)  
 Y = auto_data['price']  
 X_train, x_test, Y_train, y_test = train_test_split(X, Y, test_size=0.2, random_state=0)  
-from sklearn.linear_model import LinearRegressionlinear_model = LinearRegression()  
+from sklearn.linear_model import LinearRegression
+linear_model = LinearRegression()  
 linear_model.fit(X_train, Y_train)  
-#Checking the scorelinear_model.score(X_train, Y_train)OUT:  
-0.96792273709243304
+#Checking the score
+linear_model.score(X_train, Y_train)
+# OUT: 0.96792273709243304
 ```
 We got a really high score on the training set , what about the test set?
-```
+```python
 y_predict = linear_model.predict(x_test)  
 %pylab inline  
-pylab.rcParams['figure.figsize'] = (15, 6)plt.plot(y_predict, label='Predicted')  
+pylab.rcParams['figure.figsize'] = (15, 6)
+plt.plot(y_predict, label='Predicted')  
 plt.plot(y_test.values, label='Actual')  
-plt.ylabel('Price')plt.legend()  
+plt.ylabel('Price')
+plt.legend()  
 plt.show()
 ```
 ![](https://miro.medium.com/max/700/1*q2X7XDIGeiBX8YgXTtvM-A.png)
 
 It doesn’t look that good graphically lets check the score
-```
+```python
 r_squared = linear_model.score(x_test, y_test)  
-r_squaredOUT:  
-0.63225834161155436
+r_squared
+# OUT: 0.63225834161155436
 ```
 We’ve got a low score , this is known in ML terms as over-fitting the model learned the training set so well that it struggling at generalization. So how can remedy this problem. Well there’s another form of regression that attempts to solve this issue and it’s called **Lasso Regression**. Instead of minimizing the sum of the errors it adds a penalty term on the coefficients as to force them to be small. Concretely the algorithm will minimize this :
 
 ![](https://miro.medium.com/max/700/1*8c2QXIzRUcV00F39zc4d6w.png)
 
 Where α is a parameter we choose. Let’s try it out with an α of 0.5 :
-```
-from sklearn.linear_model import Lassolasso_model = Lasso(alpha=0.5, normalize=True)  
+```python
+from sklearn.linear_model import Lasso
+lasso_model = Lasso(alpha=0.5, normalize=True)  
 lasso_model.fit(X_train, Y_train)  
 lasso_model.score(X_train, Y_train)  
-OUT:  
-0.96510812725275497
+# OUT: 0.96510812725275497
 ```
 We’ve got a slightly lower score on the training set. Let’s try the model on the test set:
-```
+```python
 y_predict = lasso_model.predict(x_test)  
 %pylab inline  
-pylab.rcParams['figure.figsize'] = (15, 6)plt.plot(y_predict, label='Predicted')  
+pylab.rcParams['figure.figsize'] = (15, 6)
+plt.plot(y_predict, label='Predicted')  
 plt.plot(y_test.values, label='Actual')  
-plt.ylabel('Price')plt.legend()  
+plt.ylabel('Price')
+plt.legend()  
 plt.show()
 ```
 ![](https://miro.medium.com/max/700/1*3BgNad3wqJKHKstPukDRTg.png)
 
 This time it seems to fit better let’s check the R-squared value:
-```
+```python
 r_square = lasso_model.score(x_test, y_test)  
 r_square  
-OUT:  
-0.887194953444848
+# OUT: 0.887194953444848
 ```
 The R-squared score is way better than the simple linear model. We can further improve the performance by tweaking the α parameter. Finding the best parameters for a model is called hyper-parameter tuning and there’s functions in sklearn that makes it easy to find these.
 
