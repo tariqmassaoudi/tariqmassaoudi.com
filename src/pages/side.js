@@ -13,7 +13,7 @@ const SideProjects = ({ data, location }) => {
         <div className="text-3xl font-bold font-sans mb-6">Side Projects🔨</div>
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 ">
         
-        <SideCard imageSrc={"https://raw.githubusercontent.com/tariqmassaoudi/pr-buddy/main/assets/pr-buddy-logo.png"} title={"PR Buddy 🤖"} description={"An autonomous AI Agent built with LangGraph that acts as a code reviewer. Chrome Extension seamlessly integrates with Azure DevOps for AI-powered PR descriptions and code reviews."}
+        <SideCard imageSrc={"https://github.com/tariqmassaoudi/pr-buddy/raw/main/chrome-extension/src/assets/icon128.png"} title={"PR Buddy 🤖"} description={"An autonomous AI Agent built with LangGraph that acts as a code reviewer. Chrome Extension seamlessly integrates with Azure DevOps for AI-powered PR descriptions and code reviews."}
         
         links={[
           {
@@ -32,16 +32,6 @@ const SideProjects = ({ data, location }) => {
             type: "demo",
             url: "/stories",
             label: "Stories"
-          }
-        ]}/>
-
-<SideCard imageSrc={"https://github.com/tariqmassaoudi/pr-buddy/raw/main/chrome-extension/src/assets/icon128.png"} title={"PR Buddy"} description={"AI-powered tool for creating and reviewing pull requests in Azure DevOps. Combines LangGraph AI Agents for generating PR descriptions and code reviews with a Chrome Extension that seamlessly integrates with Azure DevOps"}
-        
-        links={[
-          {
-            type: "github",
-            url: "https://github.com/tariqmassaoudi/pr-buddy",
-            label: "GitHub"
           }
         ]}/>
 
@@ -70,12 +60,6 @@ const SideProjects = ({ data, location }) => {
             url: "https://github.com/tariqmassaoudi/aitariq_notebooks",
             label: "GitHub"
           },
-          {
-            type: "demo",
-            url: "https://aitariq.tariqmassaoudi.com/",
-            label: "Demo"
-          }
-          ,
           {
             type: "article",
             url: "https://tariqmassaoudi.medium.com/how-i-created-an-ai-clone-of-myself-48f4452c6adf",
