@@ -12,12 +12,12 @@ const Layout = ({ location, title, children }) => {
   if (isRootPath) {
     header = (<div className="text-center mt-8" >
       <div className="uppercase text-xl font-sans font-bold  my-5">
-       Hi there 👋, I’m 
+       Hi there 👋, I'm 
     </div>
      <div className="text-5xl md:text-7xl font-serif font-bold text-black my-5">Tariq Massaoudi
       </div>
-      <div className="text-xl font-sans "><span className="font-medium">Software Engineer</span> from Morocco.<br/>
-      I build digital experiences and I love what I do<br/>
+      <div className="text-xl font-sans "><span className="font-bold text-green-700">AI Software Engineer</span> from Morocco.<br/>
+      Specializing in GenAI, RAG architectures & MLOps.<br/>
       </div> 
     </div>
        

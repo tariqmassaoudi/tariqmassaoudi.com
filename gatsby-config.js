@@ -3,12 +3,12 @@ module.exports = {
     title: `Tariq Massaoudi`,
     author: {
       name: `Tariq Massaoudi`,
-      summary: `Software Enginner building useful things`,
+      summary: `AI Software Engineer specializing in GenAI, RAG & MLOps`,
     },
-    description: `Tariq Massaoudi's Personal Website`,
+    description: `AI Software Engineer specializing in GenAI, RAG architectures, and MLOps. Building intelligent systems on Azure and AWS.`,
     siteUrl: `https://www.tariqmassaoudi.com`,
     social: {
-      twitter: `kylemathews`,
+      twitter: `taraborr`,
     },
   },
   plugins: [

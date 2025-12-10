@@ -12,6 +12,17 @@ const SideProjects = ({ data, location }) => {
       <div>
         <div className="text-3xl font-bold font-sans mb-6">Side Projects🔨</div>
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 ">
+        
+        <SideCard imageSrc={"https://raw.githubusercontent.com/tariqmassaoudi/pr-buddy/main/assets/pr-buddy-logo.png"} title={"PR Buddy 🤖"} description={"An autonomous AI Agent built with LangGraph that acts as a code reviewer. Chrome Extension seamlessly integrates with Azure DevOps for AI-powered PR descriptions and code reviews."}
+        
+        links={[
+          {
+            type: "github",
+            url: "https://github.com/tariqmassaoudi/pr-buddy",
+            label: "GitHub"
+          }
+        ]}/>
+
         <SideCard target="_self" imageSrc={"https://user-images.githubusercontent.com/52799665/233961207-370cf384-f032-4845-a758-145fecec68ae.png"} title={"Data Stories"} description={"A collection of data visualizations answering meaningful questions. Data is scraped then cleaned & analyzed to produce delightful stories☀️"}
         
         
@@ -50,7 +61,7 @@ const SideProjects = ({ data, location }) => {
         ]}/>
 
        
-          <SideCard imageSrc={"https://user-images.githubusercontent.com/52799665/233782346-9ab287cb-0619-4b97-bbcf-da168a9c1b21.png"} title={"AI Tariq🤖"} description={"Using LangChain, Pinecone & my ChatLogs to create an AI that simulates my personlaity. Demo backend built with FastApi hosted on ECS"}
+          <SideCard imageSrc={"https://user-images.githubusercontent.com/52799665/233782346-9ab287cb-0619-4b97-bbcf-da168a9c1b21.png"} title={"AI Tariq🤖"} description={"RAG-powered AI clone using LangChain, Pinecone & my chat history. FastAPI backend with vector embeddings for semantic search. Deployed on AWS ECS."}
         
         
         links={[
