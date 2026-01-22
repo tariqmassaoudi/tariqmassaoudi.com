@@ -4,8 +4,7 @@ date: "2025-01-22T12:00:00.000Z"
 description: Practical lessons and patterns for getting the most out of agentic coding tools
 tag: AI,Engineering
 ---
-
-### I Use Coding Agents Daily: Here's What Works
+### Introduction: 
 
 Agentic coding is less about "letting the AI code" and more about how you set it up for success. Treat coding agents like **junior engineers**: give them clear goals, strong constraints, the right tools, and a way to validate their work. This article summarizes practical lessons and patterns that have worked for me when using modern agentic coding tools in real projects.
 
