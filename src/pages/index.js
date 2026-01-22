@@ -11,7 +11,6 @@ const BlogIndex = ({ data, location }) => {
       
       <Layout location={location} title={siteTitle}>
       {/* <Bio /> */}
-      <div className="text-2xl font-semibold font-sans text-black mb-2">Featured Articles: </div>
       <ol className="flex flex-col md:flex-row" style={{ listStyle: `none` }}>
         {posts.map((post,index) => {
           const title = post.frontmatter.title || post.fields.slug
