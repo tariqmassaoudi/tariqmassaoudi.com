@@ -55,7 +55,7 @@ export const pageQuery = graphql`
     }
     allMarkdownRemark(
       sort: {fields: [frontmatter___date], order: ASC}
-      filter: {frontmatter: {title: {in: ["From Idea to Reality: Building a Price History Tool for Moroccan Ecommerce","Arabic Topic Classification On The Hespress News Dataset","How I Passed The AWS Solution Architect Associate (SAA-C03)"]}}}
+      filter: {frontmatter: {title: {in: ["From Idea to Reality: Building a Price History Tool for Moroccan Ecommerce","Arabic Topic Classification On The Hespress News Dataset","I Use Coding Agents Daily: Here's What Works"]}}}
     ) {
       nodes {
         excerpt
