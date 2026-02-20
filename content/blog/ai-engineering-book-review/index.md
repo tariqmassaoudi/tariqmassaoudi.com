@@ -9,6 +9,8 @@ I've been building AI features into production systems for a while now. Like mos
 
 Then I picked up **AI Engineering: Building Applications with Foundation Models** by Chip Huyen (O'Reilly, 2025). I wish I had read it a year earlier. Not because it taught me entirely new things — some of it I already knew from experience — but because it organized everything into a framework that finally made sense. It connected the dots between evaluation, prompt engineering, RAG, agents, finetuning, and production architecture in a way no blog post ever did.
 
+![AI Engineering by Chip Huyen — Book Cover](https://huyenchip.com/assets/pics/covers/aie-cover.png)
+
 Here are the ideas from the book that changed how I think about building AI applications.
 
 ## AI Engineering Is Not ML Engineering
@@ -18,6 +20,8 @@ This distinction seems obvious in hindsight, but the book makes it explicit. Tra
 In ML engineering, the competitive advantage was in data labeling, feature engineering, and model architecture. In AI engineering, everyone has access to the same models through APIs. The moat is in **context engineering**, **evaluation on your own use case**, and **user experience**. The question becomes: how do I get the best results out of these models for my specific problem?
 
 Huyen breaks the AI stack into three layers: application development (prompts, context, UX), model development (finetuning, dataset engineering), and infrastructure (serving, compute, monitoring). Most of the work happens at the top layer. You start there and only move down when you need to.
+
+![The full AI engineering platform architecture, Source: Chip Huyen](https://huyenchip.com/assets/pics/genai-platform/1-genai-platform.png)
 
 ## Evaluation Is Everything
 
@@ -35,6 +39,8 @@ The practical takeaway: define your evaluation criteria before you write a singl
 
 RAG (Retrieval-Augmented Generation) gets its own deep treatment in the book, and rightfully so. The core idea is simple: before the model generates a response, retrieve relevant information and include it in the context.
 
+![RAG architecture: retrieve relevant context before generating a response, Source: Chip Huyen](https://huyenchip.com/assets/pics/genai-platform/3-rag.png)
+
 Some people think that as context windows grow longer (200K+ tokens now), RAG will become unnecessary. Huyen argues the opposite, and I agree: **data always grows faster than context windows**. You'll never fit everything into context, so you'll always need intelligent retrieval.
 
 The phrase from the book I use all the time now: **"RAG is for facts, finetuning is for form."** If your model needs to know specific, up-to-date information — use RAG. If your model needs to adopt a specific style or behavior pattern — consider finetuning. Most applications need RAG first. Finetuning is expensive, can become outdated when the base model updates, and should only be pursued after you've maximized what prompting and RAG can do.
@@ -44,6 +50,8 @@ The phrase from the book I use all the time now: **"RAG is for facts, finetuning
 The agents chapter is where the book gets exciting. At its core, an agent is just an LLM that can perceive its environment and act on it through tools. ChatGPT browsing the web, a coding agent running terminal commands, a customer support bot querying a database — these are all agents.
 
 A key principle that maps directly to my experience with coding agents: **decouple planning from execution**. Let the model generate a plan first, validate that plan, then execute it step by step. Blindly letting a model plan and execute simultaneously is how you get agents that go off the rails. This is the same pattern I follow daily — I always ask for a plan first, review it, then let the agent implement.
+
+![The agent pattern: separating planning from execution, Source: Chip Huyen](https://huyenchip.com/assets/pics/agents/2-agent-pattern.png)
 
 Here's the math that makes this concrete: each step in an agent's plan is a potential point of failure, and errors compound. A five-step plan where each step has 90% accuracy gives you only about **59% overall success**. This is why keeping agent plans simple and providing verification at each step matters so much.
 
